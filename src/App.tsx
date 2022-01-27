@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Task } from "./components/Task"
+import "./App.css"
 
 function App() {
   const [tasks, setTasks] = useState<string[]>([])
@@ -14,15 +15,15 @@ function App() {
 
   return (
     <div>
-      {tasks.map((task, id) => {
-        return <Task key={id} text={task} />
-      })}
       <input
         name="description"
         type="text"
         onChange={e => setDescription(e.target.value)}
         value={description} />
       <button onClick={addTask}>Adicinar Tarefa</button>
+      {tasks.map((task, id) => {
+        return <Task key={id} text={task} />
+      })}
     </div>
   )
 }
