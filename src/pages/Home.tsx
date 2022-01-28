@@ -3,7 +3,7 @@ import { Task } from "../components/Task"
 
 export function Home() {
   const [tasks, setTasks] = useState<string[]>([])
-  const [description, setDescription] = useState<string>()
+  const [description, setDescription] = useState<string>('')
 
   const addTask = () => {
     if(description) {

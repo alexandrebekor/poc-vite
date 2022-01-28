@@ -1,5 +1,15 @@
+import { css } from '@stitches/react'
+import { useState } from 'react'
 
-import './Task.css'
+const Layout = css({
+  display: 'flex',
+  color: '#f1f1f1',
+  backgroundColor: '#e1e',
+  padding: '0.5rem',
+  '&:checked': {
+    color: '#e1e'
+  }
+})
 
 type TaskProps = {
   text: string
@@ -7,11 +17,9 @@ type TaskProps = {
 
 export function Task(props: TaskProps) {
   return (
-      <div>
-        <input type="checkbox"/>
-        <label style={{
-          backgroundColor: '#8257e6',
-        }}>{ props.text }</label>
+      <div className={Layout()}>
+        <input type="checkbox" />
+        <label>{ props.text }</label>
       </div>
   )
 }
